@@ -1,0 +1,453 @@
+/* ------------------------------------------------------------------------ */
+/* GLOBAL VARIABLES */
+/* ------------------------------------------------------------------------ */
+
+:root {
+  --cream: hsl(26, 67%, 95%, 1);
+  --orange: hsl(24, 100%, 50%, 1);
+  --navy: hsl(216, 64%, 13%, 1);
+  --gray: hsl(217, 18%, 28%, 1);
+}
+
+/* ------------------------------------------------------------------------ */
+/* BASIC SETUP */
+/* ------------------------------------------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1100px 1fr;
+  grid-template-rows: 100vh repeat(4, max-content);
+  grid-template-areas:
+    "header     header      header"
+    ".          about         ."
+    ".          process       ."
+    ".          contact       ."
+    "footer     footer      footer";
+  background-color: var(--cream);
+}
+
+/* ------------------------------------------------------------------------ */
+/* REUSABLE ITEMS */
+/* ------------------------------------------------------------------------ */
+
+.btn {
+  display: inline-block;
+  padding: 9px 29px;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.btn-full {
+  background-color: var(--navy);
+  color: var(--cream);
+  border: 1px solid var(--navy);
+}
+
+.btn-ghost {
+  border: 1px solid var(--navy);
+  color: var(--navy);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  color: var(--bright-white);
+}
+
+.about, .process, .contact {
+  margin: 80px 0;
+}
+
+/* ------------------------------------------------------------------------ */
+/* HEADINGS */
+/* ------------------------------------------------------------------------ */
+
+h1,
+h2,
+h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 300%;
+  word-spacing: 3px;
+}
+
+h2 {
+  font-size: 200%;
+  word-spacing: 2px;
+}
+
+h3 {
+  font-size: 130%;
+  word-spacing: 1px;
+}
+
+/* ------------------------------------------------------------------------ */
+/* HEADER */
+/* ------------------------------------------------------------------------ */
+
+header {
+  grid-area: header;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../resources/img/studying-1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1100px 1fr;
+  grid-template-rows: max-content auto;
+  grid-template-areas:
+    "navbar    navbar      navbar"
+    ".         content        .";
+}
+
+nav {
+  grid-area: navbar;
+  display: grid;
+  grid-template-columns: 1fr 1100px 1fr;
+  background-color: var(--cream);
+  grid-template-areas: ". content .";
+  padding: 10px 0;
+}
+
+nav .nav-content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+nav .nav-content .navbar-links {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+}
+
+nav img {
+  height: 40px;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--navy);
+  transition: color 0.3s;
+}
+
+nav ul a:hover {
+  color: var(--orange);
+}
+
+.header-content {
+  grid-area: content;
+  display: grid;
+  place-items: center;
+}
+
+.header-content .longcopy {
+  width: 60%;
+  color: var(--cream);
+}
+
+.header-content .longcopy p {
+  margin: 20px 0;
+  line-height: 150%;
+}
+
+/* ------------------------------------------------------------------------ */
+/* ABOUT */
+/* ------------------------------------------------------------------------ */
+.about {
+  grid-area: about;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "content lottie";
+}
+
+.about .about-content {
+  grid-area: content;
+  width: 90%;
+}
+
+.about h2 {
+  color: var(--navy);
+}
+
+.about p {
+  color: var(--gray);
+  margin-top: 20px;
+  line-height: 180%;
+}
+
+.about .lottie {
+  grid-area: lottie;
+  display: grid;
+  justify-content: end;
+  align-content: center;
+}
+
+/* ------------------------------------------------------------------------ */
+/* PROCESS */
+/* ------------------------------------------------------------------------ */
+
+.process {
+  grid-area: process;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  grid-template-areas: "process-text"
+                       "process-steps-row";
+}
+
+.process .process-text {
+  grid-area: process-text;
+}
+
+.process .process-text h2 {
+  text-align: center;
+}
+
+.process .process-text p {
+  width: 60%;
+  color: var(--gray);
+  margin: 20px 20% 30px;
+}
+
+.process .process-steps-row {
+  grid-area: process-steps-row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+}
+
+.process .process-steps-row svg {
+  width: auto;
+  height: 100px;
+}
+
+.process .process-steps-row .svg {
+  display: grid;
+  justify-content: center;
+}
+
+.process .process-steps-row p {
+  font-size: 90%;
+  margin-top: 10px;
+  color: var(--gray);
+}
+
+.process .process-steps-row .process-steps-text {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.process .process-steps-row .process-steps-text h3 {
+  color: var(--navy);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+/* CONTACT */
+/* ------------------------------------------------------------------------ */
+
+.contact {
+  grid-area: contact;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "form address"
+                       "form call-us";
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact .address,
+.contact .call-us {
+  padding-left: 200px;
+}
+
+.contact .address {
+  grid-area: address;
+}
+
+.contact .call-us {
+  grid-area: call-us;
+}
+
+.contact .form{
+  grid-area: form;
+}
+
+.contact .form form {
+  display: grid;
+  grid-template-rows: repeat(5, max-content);
+  grid-template-areas: "name-row"
+                       "email-row"
+                       "subject-row"
+                       "message-row"
+                       "submit-row";
+  grid-row-gap: 20px;
+}
+
+.contact .form .name-row,
+.contact .form .email-row,
+.contact .form .subject-row,
+.contact .form .message-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-content: center;
+}
+
+.contact .form .name-row {
+  grid-area: name-row;
+}
+
+.contact .form .email-row {
+  grid-area: email-row;
+}
+
+.contact .form .subject-row {
+  grid-area: subject-row;
+}
+
+.contact .form .message-row {
+  grid-area: message-row;
+}
+
+::placeholder {
+  color: var(--gray);
+}
+
+input,
+label,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+
+input, textarea, select {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: var(--navy);
+  background-color: var(--cream);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 80%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--orange);
+}
+
+.contact .form textarea {
+  resize: none;
+  overflow: auto;
+  padding: 10px;
+}
+
+.contact .form .submit-row {
+  grid-area: submit-row;
+  display: grid;
+  justify-content: center;
+}
+
+.contact .form .submit-row button {
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------------ */
+/* FOOTER */
+/* ------------------------------------------------------------------------ */
+
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  color: var(--cream);
+  background-color: var(--navy);
+  padding: 40px 0;
+}
+
+footer .socials {
+    display: grid;
+    justify-content: center;
+}
+
+footer .socials ul {
+  list-style-type: none;
+}
+
+footer .socials ul li {
+  display: inline-block;
+}
+
+footer .socials ul li a {
+  text-decoration: none;
+}
+
+footer .socials svg {
+  height: 25px;
+  width: auto;
+  margin-right: 25px;
+}
+
+footer .socials svg:hover path {
+  fill: var(--cream);
+  transition: fill 0.3s;
+}
+
+footer .footer-text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 70%;
+}
+
+/*   
+Lato: Bold 700;
+font-family: 'Lato', sans-serif;
+
+
+Poppins: Extra-Light 200;
+         Light 300;
+font-family: 'Poppins', sans-serif;
+
+*/
