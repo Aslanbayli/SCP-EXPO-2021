@@ -490,6 +490,7 @@ select:focus {
 /* ------------------------------------------------------------------------ */
 .login-body {
   display: grid;
+  grid-template-rows: repeat(3, -webkit-max-content);
   grid-template-rows: repeat(3, max-content);
   grid-template-areas:
     "navbar"
@@ -507,6 +508,7 @@ select:focus {
 
 .login-nav .logo-name {
   display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
   align-items: center;
   grid-column-gap: 50px;
@@ -530,6 +532,7 @@ select:focus {
 .card-section {
   grid-area: card-section;
   display: grid;
+  grid-template-columns: 1fr -webkit-max-content 1fr;
   grid-template-columns: 1fr max-content 1fr;
   grid-template-areas: ". card .";
 }
@@ -545,6 +548,7 @@ select:focus {
 .card-section .card h2 {
   text-align: center;
   margin-bottom: 40px;
+  color: var(--navy);
 }
 
 .card-section .login-form {
@@ -555,7 +559,7 @@ select:focus {
 
 .card-section .login-form input {
   padding: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   border: 1.5px solid var(--gray);
   border-radius: 10px;
@@ -577,6 +581,7 @@ select:focus {
 .cues {
   grid-area: cues;
   display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
   grid-column-gap: 200px;
   justify-content: center;
@@ -591,6 +596,65 @@ select:focus {
   color: var(--orange);
 }
 
+
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+/* SIGN UP PAGE */
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+
+.card-section .signup-form {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  grid-template-areas: "signup-form-input"
+                       "signup-form-agreements"
+                       "signup-form-button";
+}
+
+.card-section .signup-form-input {
+  grid-area: signup-form-input;
+  display: grid;
+  justify-content: center;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, max-content);
+}
+
+.card-section .signup-form-agreements {
+  grid-area: signup-form-agreements;
+}
+
+.card-section .signup-form-agreements label,
+.card-section .signup-form-agreements input {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.card-section .signup-form-agreements label {
+  font-size: 80%;
+  user-select: none;
+}
+
+.card-section .signup-form-agreements .checkbox {
+  width: auto;
+}
+
+.card-section .signup-form-button {
+  grid-area: signup-form-button;
+  display: grid;
+  justify-content: center;
+}
+
+.card-section .signup-form-button .btn {
+  margin: 0;
+}
+
+.card-section .signup-form input {
+  width: 300px;
+}
+
+.card-section .signup-card {
+  padding-bottom: 30px;
+}
 /*   
 Lato: Bold 700;
 font-family: 'Lato', sans-serif;
