@@ -7,7 +7,14 @@
   --orange: hsl(24, 100%, 50%, 1);
   --navy: hsl(216, 64%, 13%, 1);
   --gray: hsl(217, 18%, 28%, 1);
+  --cloud: #f5f6fa;
 }
+
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+/* HOMEPAGE */
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------------ */
 /* BASIC SETUP */
@@ -26,7 +33,7 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-body {
+.index-body {
   display: grid;
   grid-template-columns: 1fr 1100px 1fr;
   grid-template-rows: 100vh repeat(4, -webkit-max-content);
@@ -77,7 +84,9 @@ body {
   color: var(--bright-white);
 }
 
-.about, .process, .contact {
+.about,
+.process,
+.contact {
   margin: 80px 0;
 }
 
@@ -112,7 +121,7 @@ h3 {
 /* HEADER */
 /* ------------------------------------------------------------------------ */
 
-header {
+.index-header {
   grid-area: header;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../resources/img/studying-1.jpg);
@@ -129,7 +138,7 @@ header {
     ".         content        .";
 }
 
-nav {
+.index-nav {
   grid-area: navbar;
   display: grid;
   grid-template-columns: 1fr 1100px 1fr;
@@ -138,40 +147,40 @@ nav {
   padding: 10px 0;
 }
 
-nav .nav-content {
+.index-nav .nav-content {
   grid-area: content;
   display: grid;
   grid-template-columns: -webkit-max-content 1fr;
   grid-template-columns: max-content 1fr;
 }
 
-nav .nav-content .navbar-links {
+.index-nav .nav-content .navbar-links {
   display: grid;
   align-items: center;
   justify-items: end;
 }
 
-nav img {
+.index-nav img {
   height: 40px;
   width: auto;
 }
 
-nav ul {
+.index-nav ul {
   list-style-type: none;
 }
 
-nav ul li {
+.index-nav ul li {
   display: inline-block;
   margin-left: 50px;
 }
 
-nav ul a {
+.index-nav ul a {
   text-decoration: none;
   color: var(--navy);
   transition: color 0.3s;
 }
 
-nav ul a:hover {
+.index-nav ul a:hover {
   color: var(--orange);
 }
 
@@ -232,8 +241,9 @@ nav ul a:hover {
   display: grid;
   grid-template-rows: repeat(2, -webkit-max-content);
   grid-template-rows: repeat(2, max-content);
-  grid-template-areas: "process-text"
-                       "process-steps-row";
+  grid-template-areas:
+    "process-text"
+    "process-steps-row";
 }
 
 .process .process-text {
@@ -292,8 +302,9 @@ nav ul a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "form address"
-                       "form call-us";
+  grid-template-areas:
+    "form address"
+    "form call-us";
 }
 
 .contact h2 {
@@ -313,44 +324,45 @@ nav ul a:hover {
   grid-area: call-us;
 }
 
-.contact .form{
+.contact .form-div {
   grid-area: form;
 }
 
-.contact .form form {
+.contact .form-div .index-form {
   display: grid;
   grid-template-rows: repeat(5, -webkit-max-content);
   grid-template-rows: repeat(5, max-content);
-  grid-template-areas: "name-row"
-                       "email-row"
-                       "subject-row"
-                       "message-row"
-                       "submit-row";
+  grid-template-areas:
+    "name-row"
+    "email-row"
+    "subject-row"
+    "message-row"
+    "submit-row";
   grid-row-gap: 20px;
 }
 
-.contact .form .name-row,
-.contact .form .email-row,
-.contact .form .subject-row,
-.contact .form .message-row {
+.contact .form-div .name-row,
+.contact .form-div .email-row,
+.contact .form-div .subject-row,
+.contact .form-div .message-row {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-content: center;
 }
 
-.contact .form .name-row {
+.contact .form-div .name-row {
   grid-area: name-row;
 }
 
-.contact .form .email-row {
+.contact .form-div .email-row {
   grid-area: email-row;
 }
 
-.contact .form .subject-row {
+.contact .form-div .subject-row {
   grid-area: subject-row;
 }
 
-.contact .form .message-row {
+.contact .form-div .message-row {
   grid-area: message-row;
 }
 
@@ -374,21 +386,29 @@ nav ul a:hover {
   color: var(--gray);
 }
 
+.index-form input,
+.index-form label,
+.index-form textarea,
+.index-form select {
+  width: 100%;
+}
+
 input,
 label,
 textarea,
 select {
   display: block;
-  width: 100%;
-  padding: 5px;
+  outline: 0;
 }
 
-input, textarea, select {
-  outline: 0;
+.index-form input,
+.index-form textarea,
+.index-form select {
+  padding: 5px;
   border-width: 0 0 2px;
   border-color: var(--navy);
   background-color: var(--cream);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: 80%;
 }
@@ -399,19 +419,19 @@ select:focus {
   border-color: var(--orange);
 }
 
-.contact .form textarea {
+.contact .form-div textarea {
   resize: none;
   overflow: auto;
   padding: 10px;
 }
 
-.contact .form .submit-row {
+.contact .form-div .submit-row {
   grid-area: submit-row;
   display: grid;
   justify-content: center;
 }
 
-.contact .form .submit-row button {
+.contact .form-div .submit-row button {
   margin: 0;
 }
 
@@ -419,7 +439,7 @@ select:focus {
 /* FOOTER */
 /* ------------------------------------------------------------------------ */
 
-footer {
+.index-footer {
   grid-area: footer;
   display: grid;
   grid-template-rows: repeat(2, -webkit-max-content);
@@ -429,38 +449,146 @@ footer {
   padding: 40px 0;
 }
 
-footer .socials {
-    display: grid;
-    justify-content: center;
+.index-footer .socials {
+  display: grid;
+  justify-content: center;
 }
 
-footer .socials ul {
+.index-footer .socials ul {
   list-style-type: none;
 }
 
-footer .socials ul li {
+.index-footer .socials ul li {
   display: inline-block;
 }
 
-footer .socials ul li a {
+.index-footer .socials ul li a {
   text-decoration: none;
 }
 
-footer .socials svg {
+.index-footer .socials svg {
   height: 25px;
   width: auto;
   margin-right: 25px;
 }
 
-footer .socials svg:hover path {
+.index-footer .socials svg:hover path {
   fill: var(--cream);
   transition: fill 0.3s;
 }
 
-footer .footer-text {
+.index-footer .footer-text {
   margin-top: 20px;
   text-align: center;
   font-size: 70%;
+}
+
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+/* LOGIN PAGE */
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+.login-body {
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  grid-template-areas:
+    "navbar"
+    "card-section"
+    "cues";
+  background-color: var(--cream);
+}
+
+.login-nav {
+  grid-area: navbar;
+  display: grid;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login-nav .logo-name {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  grid-column-gap: 50px;
+}
+
+.login-nav svg {
+  width: 60px;
+  height: auto;
+}
+
+.login-nav h3 {
+  display: inline-block;
+  color: var(--navy);
+}
+
+.card-section,
+.cues {
+  margin-top: 30px;
+}
+
+.card-section {
+  grid-area: card-section;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-areas: ". card .";
+}
+
+.card-section .card {
+  grid-area: card;
+  background-color: var(--cloud);
+  border-radius: 10px;
+  padding: 20px 100px 50px;
+  box-shadow: 5px 5px 10px hsl(24, 100%, 50%, 0.2);
+}
+
+.card-section .card h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card-section .login-form {
+  display: grid;
+  justify-content: center;
+  grid-row-gap: 20px;
+}
+
+.card-section .login-form input {
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  border: 1.5px solid var(--gray);
+  border-radius: 10px;
+}
+
+.card-section .login-form input:focus {
+  border-color: var(--orange);
+}
+
+.card-section .login-form .btn {
+  margin-top: 40px;
+}
+
+.card-section .login-form input,
+.card-section .login-form .btn {
+  width: 400px;
+}
+
+.cues {
+  grid-area: cues;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 200px;
+  justify-content: center;
+}
+
+.cues a {
+  color: var(--navy);
+  transition: color 0.3s;
+}
+
+.cues a:hover {
+  color: var(--orange);
 }
 
 /*   
