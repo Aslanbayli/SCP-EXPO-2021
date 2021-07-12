@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/queries.css" />
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--FAVICONS-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./resources/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./resources/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./resources/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./resources/favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./resources/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="./resources/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta
+      name="msapplication-config"
+      content="./resources/favicons/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Search</title>
+  </head>
+  <body class="search-body">
+    <div class="search-bar card">
+      <div class="categories">
+        <select name="categories" id="categories">
+          <option value="Get help" selected>Get help</option>
+          <option value="Volunteer">Volunteer</option>
+        </select>
+      </div>
+      <div class="query">
+        <form action="#" class="search-query-form">
+          <input
+            type="text"
+            placeholder="Search..."
+            name="searchquery"
+            id="searchquery"
+          />
+          <button type="submit">
+            <svg viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.0145 23.691L20.0121 14.6865C21.7013 10.8517 20.9785 6.20193 17.8426 3.06524C13.7568 -1.02147 7.14337 -1.02202 3.05713 3.06524C-1.01904 7.14235 -1.01904 13.7763 3.05713 17.8534C6.29627 21.0933 11.0433 21.7102 14.8329 19.9583L23.7892 28.9167C25.2332 30.3611 27.5708 30.3612 29.0148 28.9164C30.4548 27.4757 30.4547 25.1316 29.0145 23.691ZM4.72513 16.1857C1.56831 13.0282 1.56831 7.89054 4.72513 4.73293C7.88896 1.56832 13.0101 1.56777 16.1745 4.73293C19.3313 7.89054 19.3313 13.0282 16.1745 16.1857C13.0106 19.3504 7.88943 19.3509 4.72513 16.1857ZM27.3465 27.249C26.8245 27.7713 25.9794 27.7715 25.4572 27.2491L16.9003 18.6901C17.6036 18.1364 18.2305 17.5006 18.7748 16.785L27.3464 25.3586C27.8674 25.8798 27.8675 26.7278 27.3465 27.249Z" fill="#FF6501"/>
+            </svg>     
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="search-filter-sidebar card">
+      <div>
+        <h4>Location</h4>
+        <input type="radio" name="location" id="mylocation" class="checkbox" />
+        <label for="mylocation">My location</label>
+        <br />
+        <input type="radio" name="location" id="remote" />
+        <label for="remote">Remote</label>
+        <br />
+        <input type="radio" name="location" id="mylocation&remote" />
+        <label for="mylocation&remote">Both</label>
+      </div>
+      <div>
+        <h4>Reviews</h4>
+        <input type="radio" name="reviews" id="5-star-review" />
+        <label for="5-star-review">5 star reviews</label>
+        <br />
+        <input type="radio" name="reviews" id="4-star-review" />
+        <label for="4-star-review">4 star reviews</label>
+        <br />
+        <input type="radio" name="reviews" id="3-star-review" />
+        <label for="3-star-review">3 star reviews</label>
+        <br />
+        <input type="radio" name="reviews" id="2-star-review" />
+        <label for="2-star-review">2 star reviews</label>
+        <br />
+        <input type="radio" name="reviews" id="1-star-review" />
+        <label for="1-star-review">1 star reviews</label>
+      </div>
+      <div>
+        <h4>Language</h4>
+        <input type="radio" name="lang" id="english-lang" />
+        <label for="english-lang">English</label>
+        <br />
+        <input type="radio" name="lang" id="portugues-lang" />
+        <label for="portugues-lang">Português</label>
+        <br />
+        <input type="radio" name="lang" id="espanol-lang" />
+        <label for="espanol-lang">Español</label>
+      </div>
+    </div>
+    <div class="search-results">
+        <div class="card">Search result</div>
+        <div class="card">Search result</div>
+        <div class="card">Search result</div>
+    </div>
+  </body>
+</html>

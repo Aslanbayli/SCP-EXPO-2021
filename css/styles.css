@@ -96,7 +96,8 @@ html {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
@@ -114,6 +115,11 @@ h2 {
 
 h3 {
   font-size: 130%;
+  word-spacing: 1px;
+}
+
+h4 {
+  font-size: 110%;
   word-spacing: 1px;
 }
 
@@ -488,6 +494,7 @@ select:focus {
 /* LOGIN PAGE */
 /* ------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------ */
+
 .login-body {
   display: grid;
   grid-template-rows: repeat(3, -webkit-max-content);
@@ -537,12 +544,15 @@ select:focus {
   grid-template-areas: ". card .";
 }
 
+.card {
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px hsl(24, 100%, 50%, 0.2);
+}
+
 .card-section .card {
   grid-area: card;
   background-color: var(--cloud);
-  border-radius: 10px;
   padding: 20px 100px 50px;
-  box-shadow: 5px 5px 10px hsl(24, 100%, 50%, 0.2);
 }
 
 .card-section .card h2 {
@@ -596,7 +606,6 @@ select:focus {
   color: var(--orange);
 }
 
-
 /* ------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------ */
 /* SIGN UP PAGE */
@@ -605,10 +614,12 @@ select:focus {
 
 .card-section .signup-form {
   display: grid;
+  grid-template-rows: repeat(2, -webkit-max-content);
   grid-template-rows: repeat(2, max-content);
-  grid-template-areas: "signup-form-input"
-                       "signup-form-agreements"
-                       "signup-form-button";
+  grid-template-areas:
+    "signup-form-input"
+    "signup-form-agreements"
+    "signup-form-button";
 }
 
 .card-section .signup-form-input {
@@ -616,6 +627,7 @@ select:focus {
   display: grid;
   justify-content: center;
   grid-gap: 20px;
+  grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
 }
 
@@ -631,6 +643,9 @@ select:focus {
 
 .card-section .signup-form-agreements label {
   font-size: 80%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -655,6 +670,132 @@ select:focus {
 .card-section .signup-card {
   padding-bottom: 30px;
 }
+
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+/* SIGN UP PAGE */
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
+
+.search-body {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    "search-bar search-bar"
+    "search-filter-sidebar search-results";
+  background-color: var(--cream);
+  grid-gap: 30px;
+  padding: 20px 30px 10px 30px;
+}
+
+.search-bar,
+.search-filter-sidebar {
+  background-color: var(--cloud);
+}
+
+.search-bar {
+  grid-area: search-bar;
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "categories query";
+  padding: 5px 10px;
+  grid-column-gap: 35px;
+}
+
+.search-bar select,
+.search-bar input {
+  display: inline-block;
+}
+
+.search-bar .query {
+  grid-area: query;
+}
+
+.search-bar .categories {
+  grid-area: categories;
+}
+
+.search-bar .categories select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../resources/icons/down-arrow.svg) no-repeat;
+  background-position: 100% center;
+  background-size: 13%;
+  width: 175px;
+  height: 40px;
+  font-size: 90%;
+  border: none;
+  margin-left: 20px;
+}
+
+.search-bar .query .search-query-form {
+  height: 100%;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+
+.search-bar .query input[type="text"] {
+  border: none;
+  font-size: 90%;
+  background-color: var(--cloud);
+}
+
+.search-bar .query button {
+  background-color: var(--cloud);
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar .query svg {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.search-filter-sidebar {
+  grid-area: search-filter-sidebar;
+  padding: 20px 40px;
+  display: grid;
+  grid-row-gap: 20px;
+  color: var(--gray);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.search-filter-sidebar input,
+.search-filter-sidebar label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.search-filter-sidebar label {
+  font-size: 90%;
+}
+
+.search-filter-sidebar h4 {
+  color: var(--navy);
+}
+
+.search-results {
+  grid-area: search-results;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 20px;
+}
+
+.search-results .card {
+  background-color: var(--cloud);
+}
+
 /*   
 Lato: Bold 700;
 font-family: 'Lato', sans-serif;
