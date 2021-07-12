@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-margin-top: 80px;
 }
 
 html {
@@ -199,6 +200,10 @@ h4 {
 .header-content .longcopy {
   width: 60%;
   color: var(--cream);
+}
+
+.header-content .longcopy .btn {
+  cursor: pointer;
 }
 
 .header-content .longcopy p {
@@ -730,7 +735,7 @@ select:focus {
   appearance: none;
   background: url(../resources/icons/down-arrow.svg) no-repeat;
   background-position: 100% center;
-  background-size: 13%;
+  background-size: 10%;
   width: 175px;
   height: 40px;
   font-size: 90%;
